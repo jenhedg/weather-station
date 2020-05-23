@@ -1,7 +1,13 @@
-.weather-station {
+.container {
   background-color: #5ca8e6;
   text-align: center;
   height: 100vh;
+}
+
+.container-inner {
+  margin: 0 auto;
+  padding: 20px;
+  width: 960px;
 }
 
 .header {
