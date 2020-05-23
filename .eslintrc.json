@@ -1,21 +1,9 @@
 {
-  "plugins": [
-    "react-hooks"
+  "extends": [
+    "react-app",
+    "eslint:recommended"
   ],
-  "parserOptions": {
-    "ecmaVersion": 2019,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "env": {
-    "es6": true,
-    "browser": true,
-    "node": true
-  },
   "rules": {
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "no-trailing-spaces": "error"
   }
 }
