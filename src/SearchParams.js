@@ -1,11 +1,16 @@
-import React, { useState } from "react";
-
-// api.openweathermap.org/data/2.5/weather?q={city name}&appid=5a8880d75c5a69f9efd3b12704b19e3a
+import React, { useState, useEffect } from "react";
 
 const SearchParams = () => {
   const [location, setLocation] = useState("Enter a location");
+  const [weather, setWeather] = useState([]);
 
-  // useEffect(() => {});
+  useEffect(() => {
+    fetch(
+      "https://api.openweathermap.org/data/2.5/weather?q=tucson&appid=e0ae73daa44269e68dad05b97669bfe3"
+    )
+      .then((r) => r.json())
+      .then((data) => console.log(data));
+  }, [setWeather]);
 
   return (
     <div className="search-params">

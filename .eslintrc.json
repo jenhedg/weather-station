@@ -5,6 +5,6 @@
     "react/prop-types": 0,
     "no-console": 1,
     "react-hooks/rules-of-hooks": 2,
-    "react-hooks/exhuaustive-deps": 1
+    "react-hooks/exhuaustive-deps": 0
   }
 }
