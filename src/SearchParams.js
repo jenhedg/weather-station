@@ -1,23 +1,38 @@
 import React, { useState } from "react";
 
 const SearchParams = (props) => {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("Tucson");
+  const [data, setData] = useState([]);
 
-  const fetchData = async () => {
-    await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e0ae73dsdsfsfsdaa44269e68dad05b97669bfe3`
-    )
-      .then((response) => response.json())
-      .then((response) => console.log("response:", response))
-      .catch((error) => {
-        console.log(error, error.message);
-        throw error;
-      });
-  };
+  // async function reqData() {
+  //   fetch(
+  //     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e0ae73daa44269e68dad05b97669bfe3`
+  //   )
+  //     .then((response) => response.json())
+  //     .then((response) => Object.values(response))
+  //     .then((response) => console.log("response:", response[3]));
+
+  //   setData(response || []);
+  // }
+
+  async function reqData() {
+    const res = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e0ae73daa44269e68dad05b97669bfe3`
+    );
+    const json = await res.json();
+    const data = Object.values(json);
+    console.log("data", data);
+    setData(data);
+  }
 
   return (
     <div className="search-params">
-      <form>
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          reqData();
+        }}
+      >
         <label htmlFor="location">
           Location
           <input
@@ -27,8 +42,14 @@ const SearchParams = (props) => {
             onChange={(event) => setCity(event.target.value)}
           ></input>
         </label>
+        <button>Submit</button>
       </form>
-      <button onClick={fetchData}>Submit</button>
+      <p>
+        {" "}
+        {data.map((info) => {
+          return <p key={info}>tests</p>;
+        })}
+      </p>
     </div>
   );
 };
