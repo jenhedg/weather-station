@@ -1,28 +1,26 @@
 import React, { useState } from "react";
+import Results from "./Results";
 
 const SearchParams = (props) => {
   const [city, setCity] = useState("Tucson");
   const [data, setData] = useState([]);
-
-  // async function reqData() {
-  //   fetch(
-  //     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e0ae73daa44269e68dad05b97669bfe3`
-  //   )
-  //     .then((response) => response.json())
-  //     .then((response) => Object.values(response))
-  //     .then((response) => console.log("response:", response[3]));
-
-  //   setData(response || []);
-  // }
 
   async function reqData() {
     const res = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e0ae73daa44269e68dad05b97669bfe3`
     );
     const json = await res.json();
-    const data = Object.values(json);
-    console.log("data", data);
-    setData(data);
+    const { base } = json;
+    const {
+      main: { temp, feels_like, temp_min, temp_max },
+    } = json;
+    console.log(json);
+    // const data = {results: weather}
+    // const data = Object.values(json);
+    // console.log("data", data[3]);
+    setData(base);
+    setData(temp);
+    console.log(temp, feels_like, temp_min, temp_max);
   }
 
   return (
@@ -44,12 +42,12 @@ const SearchParams = (props) => {
         </label>
         <button>Submit</button>
       </form>
-      <p>
-        {" "}
-        {data.map((info) => {
-          return <p key={info}>tests</p>;
-        })}
-      </p>
+      <ul>
+        {/* {json.map((item, i) => (
+          <li key={i}>Current Temp: {main.temp}</li>
+        ))} */}
+      </ul>
+      {/* <Results data={data} /> */}
     </div>
   );
 };

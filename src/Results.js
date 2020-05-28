@@ -5,11 +5,15 @@ const Results = ({ weather }) => {
   return (
     <div className="results">
       <h2>Results</h2>
-      <CurrentWeather
-        city={weather.city}
-        currConditions={weather.currConditions}
-        currTemp={weather.currTemp}
-      />
+      weather.map(item => return (
+      {
+        <CurrentWeather
+          city={weather.city}
+          currConditions={weather.currConditions}
+          currTemp={weather.currTemp}
+        />
+      }
+      ; )
     </div>
   );
 };
