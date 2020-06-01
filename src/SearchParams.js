@@ -2,25 +2,30 @@ import React, { useState } from "react";
 import Results from "./Results";
 
 const SearchParams = (props) => {
-  const [city, setCity] = useState("Tucson");
-  const [data, setData] = useState([]);
+  const [city, setCity] = useState("");
+  const [location, setLocation] = useState("");
+  const [temp, setTemp] = useState(null);
+  // const [feelsLike, setFeelsLike] = useState(null);
+  const [weather, setWeather] = useState(null);
 
   async function reqData() {
-    const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e0ae73daa44269e68dad05b97669bfe3`
+    const apiKey = "e0ae73daa44269e68dad05b97669bfe3";
+    const url = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
     );
-    const json = await res.json();
-    const { base } = json;
+    const res = await url.json();
+    console.log(res);
     const {
       main: { temp, feels_like, temp_min, temp_max },
-    } = json;
-    console.log(json);
-    // const data = {results: weather}
-    // const data = Object.values(json);
-    // console.log("data", data[3]);
-    setData(base);
-    setData(temp);
-    console.log(temp, feels_like, temp_min, temp_max);
+      name,
+    } = res;
+
+    setWeather(res || []);
+    console.log(temp, feels_like, temp_min, temp_max, name);
+    setTemp(temp);
+    setCity(city);
+    setLocation(name);
+    // setFeelsLike(feels_like);
   }
 
   return (
@@ -42,12 +47,10 @@ const SearchParams = (props) => {
         </label>
         <button>Submit</button>
       </form>
-      <ul>
-        {/* {json.map((item, i) => (
-          <li key={i}>Current Temp: {main.temp}</li>
-        ))} */}
-      </ul>
-      {/* <Results data={data} /> */}
+      {/* <h2>Location: {location}</h2>
+      <p>Current Temp: {temp}</p>
+      <p>Feelslike: {feelsLike}</p> */}
+      <Results weather={weather} temp={temp} location={location} />
     </div>
   );
 };
