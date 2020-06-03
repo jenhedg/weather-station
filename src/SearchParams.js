@@ -5,7 +5,7 @@ const SearchParams = (props) => {
   const [city, setCity] = useState("");
   const [location, setLocation] = useState("");
   const [temp, setTemp] = useState(null);
-  // const [feelsLike, setFeelsLike] = useState(null);
+  const [feelsLike, setFeelsLike] = useState(null);
   const [weather, setWeather] = useState(null);
 
   async function reqData() {
@@ -22,10 +22,11 @@ const SearchParams = (props) => {
 
     setWeather(res || []);
     console.log(temp, feels_like, temp_min, temp_max, name);
-    setTemp(temp);
-    setCity(city);
-    setLocation(name);
-    // setFeelsLike(feels_like);
+    console.log(res.length);
+    setTemp(temp || []);
+    setCity(city || []);
+    setLocation(name || []);
+    setFeelsLike(feels_like || []);
   }
 
   return (
@@ -47,10 +48,12 @@ const SearchParams = (props) => {
         </label>
         <button>Submit</button>
       </form>
-      {/* <h2>Location: {location}</h2>
-      <p>Current Temp: {temp}</p>
-      <p>Feelslike: {feelsLike}</p> */}
-      <Results weather={weather} temp={temp} location={location} />
+      <Results
+        weather={weather}
+        temp={temp}
+        location={location}
+        feelsLike={feelsLike}
+      />
     </div>
   );
 };
