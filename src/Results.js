@@ -1,15 +1,15 @@
 import React from "react";
 
-const Results = ({ weather, temp, location, feelsLike, error }) => {
+const Results = ({ weather }) => {
   return (
     <div className="results">
       {weather === null ? (
-        <h1></h1>
+        <div></div>
       ) : (
-        <div className="results">
-          <h3>City:{location}</h3>
-          <h3>Current Temperature {temp}</h3>
-          <h3>It feels like: {feelsLike}</h3>
+        <div className="weather">
+          <h3>City:{weather.name}</h3>
+          <h3>Current Temperature {weather.main.temp} degrees.</h3>
+          <h3>It feels like: {weather.main.feels_like}</h3>
         </div>
       )}
     </div>

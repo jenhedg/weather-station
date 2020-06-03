@@ -3,9 +3,6 @@ import Results from "./Results";
 
 const SearchParams = (props) => {
   const [city, setCity] = useState("");
-  const [location, setLocation] = useState("");
-  const [temp, setTemp] = useState(null);
-  const [feelsLike, setFeelsLike] = useState(null);
   const [weather, setWeather] = useState(null);
 
   async function reqData() {
@@ -14,19 +11,7 @@ const SearchParams = (props) => {
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
     );
     const res = await url.json();
-    console.log(res);
-    const {
-      main: { temp, feels_like, temp_min, temp_max },
-      name,
-    } = res;
-
     setWeather(res || []);
-    console.log(temp, feels_like, temp_min, temp_max, name);
-    console.log(res.length);
-    setTemp(temp || []);
-    setCity(city || []);
-    setLocation(name || []);
-    setFeelsLike(feels_like || []);
   }
 
   return (
@@ -48,12 +33,7 @@ const SearchParams = (props) => {
         </label>
         <button>Submit</button>
       </form>
-      <Results
-        weather={weather}
-        temp={temp}
-        location={location}
-        feelsLike={feelsLike}
-      />
+      <Results weather={weather} />
     </div>
   );
 };
