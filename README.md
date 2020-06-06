@@ -1,6 +1,6 @@
 # Weather Station
 
-This is a single page React application that pulls in current weather statistics and readings by city.
+This is a single page React application that pulls in current weather data by city.
 
 ## Technologies Used
 
