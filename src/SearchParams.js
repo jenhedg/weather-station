@@ -4,7 +4,6 @@ import Results from "./Results";
 const SearchParams = (props) => {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState(null);
-  const [date, setDate] = useState(null);
 
   async function reqData() {
     const apiKey = "e0ae73daa44269e68dad05b97669bfe3";
@@ -16,19 +15,12 @@ const SearchParams = (props) => {
     console.log(res);
   }
 
-  function getDate() {
-    var date = new Date();
-    console.log(date);
-    setDate(date);
-  }
-
   return (
     <div className="search-params">
       <form
         onSubmit={(event) => {
           event.preventDefault();
           reqData();
-          getDate();
         }}
       >
         <label htmlFor="location">
