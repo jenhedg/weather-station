@@ -24,7 +24,7 @@ const SearchParams = (props) => {
         }}
       >
         <label htmlFor="location">
-          Location
+          Enter a city
           <input
             id="location"
             value={city}

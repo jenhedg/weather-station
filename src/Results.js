@@ -1,6 +1,6 @@
 import React from "react";
 
-const Results = ({ weather, date }) => {
+const Results = ({ weather }) => {
   return (
     <div className="results">
       {weather === null ? (
@@ -8,7 +8,6 @@ const Results = ({ weather, date }) => {
       ) : (
         <div className="weather">
           <h3>City: {weather.name}</h3>
-          {console.log(date)}
           <p>{new Date().toLocaleTimeString()}</p>
           <p>{new Date().toLocaleDateString()}</p>
           <h3>
