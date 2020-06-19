@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
-import SearchParams from "./SearchParams";
-import ErrorBoundary from "./ErrorBoundary";
+import SearchParams from "../SearchParams/SearchParams";
+import ErrorBoundary from "../shared/ErrorBoundary";
 
 function App() {
   return (

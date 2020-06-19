@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Results from "./Results";
+import Results from "../Results/Results";
 
 const SearchParams = (props) => {
   const [city, setCity] = useState("");
