@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.scss";
+// import "../../shared/fonts/fonts.scss";
 import SearchParams from "../SearchParams/SearchParams";
 import ErrorBoundary from "../shared/ErrorBoundary";
 
@@ -7,9 +8,9 @@ function App() {
   return (
     <div className="container">
       <header className="header">
-        <h1>Weather Station</h1>
+        <h1 className="header-title">Weather Station</h1>
       </header>
-      <main className="container-inner">
+      <main className="content">
         <ErrorBoundary>
           <SearchParams />
         </ErrorBoundary>

@@ -1,20 +1,28 @@
+$titleFontSize: 4rem;
+$textShadow: 3px 5px 3px #474747;
+
 .container {
   background-color: #5ca8e6;
-  text-align: center;
+  background-image: url(../../shared/images/background.jpg);
+  background-size: cover;
+  color: #fff;
+  font-family: "MuseoModerno";
   height: 100vh;
-}
-
-.container-inner {
-  margin: 0 auto;
-  padding: 20px;
-  width: 960px;
+  overflow: hidden;
+  width: 100%;
 }
 
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+}
+
+.header .header-title {
+  font-size: $titleFontSize;
+  text-shadow: $textShadow;
+}
+
+.content {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 600px;
 }
