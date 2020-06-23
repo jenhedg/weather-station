@@ -3,11 +3,9 @@ import "./Results.scss";
 import "../../shared/fonts/fonts.scss";
 
 const Results = ({ weather }) => {
-  return (
-    <div className="results">
-      {weather === null ? (
-        <div></div>
-      ) : (
+  if (weather) {
+    return (
+      <div className="results">
         <div className="results-weather">
           <h3>City: {weather.name}</h3>
           <p>{new Date().toLocaleTimeString()}</p>
@@ -24,9 +22,11 @@ const Results = ({ weather }) => {
           <h3>Current Temperature {weather.main.temp} degrees.</h3>
           <h3>It feels like {weather.main.feels_like} degrees</h3>
         </div>
-      )}
-    </div>
-  );
+      </div>
+    );
+  } else {
+    return null;
+  }
 };
 
 export default Results;

@@ -14,7 +14,7 @@ const SearchParams = (props) => {
     );
     const res = await url.json();
     setWeather(res || []);
-    console.log(res);
+    console.log("test", res);
   }
 
   return (
@@ -22,7 +22,7 @@ const SearchParams = (props) => {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          reqData();
+          // reqData();
         }}
       >
         <label htmlFor="location">
@@ -34,7 +34,7 @@ const SearchParams = (props) => {
             onChange={(event) => setCity(event.target.value)}
           ></input>
         </label>
-        <button>Submit</button>
+        <button onClick={(event) => reqData()}>Submit</button>
       </form>
       <Results weather={weather} />
     </div>
