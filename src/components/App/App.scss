@@ -6,13 +6,14 @@ $textShadow: 3px 5px 3px #474747;
   background-image: url(../../shared/images/background.jpg);
   background-size: cover;
   color: #fff;
-  font-family: "MuseoModerno";
   height: 100vh;
   overflow: hidden;
   width: 100%;
 }
 
-.header {
+.header .header-title {
+  font-family: "RobotoCondensed", sans-serif;
+  font-weight: bold;
   text-align: center;
 }
 

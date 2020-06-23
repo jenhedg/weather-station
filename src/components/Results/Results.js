@@ -1,4 +1,6 @@
 import React from "react";
+import "./Results.scss";
+import "../../shared/fonts/fonts.scss";
 
 const Results = ({ weather }) => {
   return (
@@ -6,7 +8,7 @@ const Results = ({ weather }) => {
       {weather === null ? (
         <div></div>
       ) : (
-        <div className="weather">
+        <div className="results-weather">
           <h3>City: {weather.name}</h3>
           <p>{new Date().toLocaleTimeString()}</p>
           <p>{new Date().toLocaleDateString()}</p>

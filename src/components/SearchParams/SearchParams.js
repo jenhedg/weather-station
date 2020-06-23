@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Results from "../Results/Results";
+import "./SearchParams.scss";
+import "../../shared/fonts/fonts.scss";
 
 const SearchParams = (props) => {
   const [city, setCity] = useState("");
