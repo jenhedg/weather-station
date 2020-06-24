@@ -1,6 +1,5 @@
 import React from "react";
-import "./Results.scss";
-import "../../shared/fonts/fonts.scss";
+import "../../index.scss";
 
 const Results = ({ weather }) => {
   if (weather) {

@@ -1,6 +1,3 @@
-$titleFontSize: 4rem;
-$textShadow: 3px 5px 3px #474747;
-
 .container {
   background-color: #5ca8e6;
   background-image: url(../../shared/images/background.jpg);
@@ -12,7 +9,7 @@ $textShadow: 3px 5px 3px #474747;
 }
 
 .header .header-title {
-  font-family: "RobotoCondensed", sans-serif;
+  font-family: $sansFont;
   font-weight: bold;
   text-align: center;
 }

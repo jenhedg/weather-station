@@ -1,5 +1,15 @@
 @import-normalize;
 
+//Shared
+@import "src/shared/styles/variables.scss";
+@import "src/shared/fonts/fonts.scss";
+
+//Components
+@import "src/components/App/App.scss";
+@import "src/components/SearchParams/SearchParams.scss";
+@import "src/components/Results/Results.scss";
+
+//Global
 * {
   box-sizing: border-box;
   margin: 0;

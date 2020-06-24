@@ -1,6 +1,6 @@
 import React from "react";
-import "./App.scss";
-import "../../shared/fonts/fonts.scss";
+import "../../index.scss";
+
 import SearchParams from "../SearchParams/SearchParams";
 import ErrorBoundary from "../shared/ErrorBoundary";
 
