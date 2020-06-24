@@ -1,3 +1,27 @@
-.search-params form label {
+.search-params {
+  width: 100%;
+}
+
+.search-params form {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-params form label,
+.search-params form label:focus {
   font-family: $serifFont;
+  margin: $spacer / 2 auto;
+  width: 100%;
+}
+
+.search-params form label input {
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  padding: $spacer / 2;
+  width: 100%;
+
+  &:focus {
+    border: 2px solid rgb(63, 127, 191);
+  }
 }

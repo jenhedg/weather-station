@@ -2,9 +2,10 @@
   background-color: #5ca8e6;
   background-image: url(../../shared/images/background.jpg);
   background-size: cover;
-  color: #fff;
+  color: $white;
   height: 100vh;
   overflow: hidden;
+  padding: $spacer;
   width: 100%;
 }
 
