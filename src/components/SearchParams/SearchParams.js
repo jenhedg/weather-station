@@ -21,11 +21,9 @@ const SearchParams = (props) => {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          // reqData();
         }}
       >
         <label htmlFor="location">
-          Enter a city
           <input
             id="location"
             value={city}
