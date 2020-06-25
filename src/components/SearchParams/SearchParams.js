@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Results from "../Results/Results";
+import ErrorBoundary from "../shared/ErrorBoundary";
 import "../../index.scss";
 
 const SearchParams = (props) => {
@@ -11,9 +12,9 @@ const SearchParams = (props) => {
     const url = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
     );
-    const res = await url.json();
-    setWeather(res || []);
-    console.log("test", res);
+    const weather = await url.json();
+    setWeather(weather);
+    console.log(weather.cod, weather.message);
   }
 
   return (
@@ -31,9 +32,13 @@ const SearchParams = (props) => {
             onChange={(event) => setCity(event.target.value)}
           ></input>
         </label>
-        <button onClick={(event) => reqData()}>Submit</button>
+        <button className="search-params-btn" onClick={(event) => reqData()}>
+          Submit
+        </button>
       </form>
-      <Results weather={weather} />
+      <ErrorBoundary>
+        <Results weather={weather} />
+      </ErrorBoundary>
     </div>
   );
 };

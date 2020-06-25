@@ -3,6 +3,7 @@ import "../../index.scss";
 
 const Results = ({ weather }) => {
   if (weather) {
+    console.log(weather);
     return (
       <div className="results">
         <div className="results-weather">

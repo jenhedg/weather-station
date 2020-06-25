@@ -1,4 +1,5 @@
 .search-params {
+  margin: 0 auto;
   width: 100%;
 }
 
@@ -24,4 +25,8 @@
   &:focus {
     border: 2px solid rgb(63, 127, 191);
   }
+}
+
+.search-params .search-params-btn {
+  cursor: pointer;
 }
