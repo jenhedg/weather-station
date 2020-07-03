@@ -15,8 +15,8 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div>
-          <h1>Please enter a valid city.</h1>
+        <div className="error">
+          <h1 className="error-msg">Please enter a valid city.</h1>
         </div>
       );
     }

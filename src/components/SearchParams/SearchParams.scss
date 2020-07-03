@@ -6,6 +6,8 @@
 .search-params form {
   display: flex;
   flex-direction: column;
+  max-width: 600px;
+  margin: auto;
 }
 
 .search-params form label,

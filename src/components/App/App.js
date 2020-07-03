@@ -1,8 +1,6 @@
 import React from "react";
 import "../../index.scss";
-
 import SearchParams from "../SearchParams/SearchParams";
-// import ErrorBoundary from "../shared/ErrorBoundary";
 
 function App() {
   return (
@@ -11,9 +9,7 @@ function App() {
         <h1 className="header-title">Weather Station</h1>
       </header>
       <main className="content">
-        {/* <ErrorBoundary> */}
         <SearchParams />
-        {/* </ErrorBoundary> */}
       </main>
     </div>
   );

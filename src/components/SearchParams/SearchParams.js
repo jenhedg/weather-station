@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Results from "../Results/Results";
-import ErrorBoundary from "../shared/ErrorBoundary";
+import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 import "../../index.scss";
 
 const SearchParams = (props) => {
@@ -13,8 +13,16 @@ const SearchParams = (props) => {
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
     );
     const weather = await url.json();
-    setWeather(weather);
-    console.log(weather.cod, weather.message);
+
+    if (url.ok) {
+      setWeather(weather);
+    }
+    console.log(url.ok);
+  }
+
+  function handleSubmit() {
+    reqData();
+    setCity("");
   }
 
   return (
@@ -22,6 +30,7 @@ const SearchParams = (props) => {
       <form
         onSubmit={(event) => {
           event.preventDefault();
+          handleSubmit();
         }}
       >
         <label htmlFor="location">
@@ -32,9 +41,10 @@ const SearchParams = (props) => {
             onChange={(event) => setCity(event.target.value)}
           ></input>
         </label>
-        <button className="search-params-btn" onClick={(event) => reqData()}>
+        {/*Todo: Test input submit on mobile and if works ok rm btn below */}
+        {/* <button className="search-params-btn" onClick={(event) => reqData()}>
           Submit
-        </button>
+        </button> */}
       </form>
       <ErrorBoundary>
         <Results weather={weather} />

@@ -1,0 +1,10 @@
+.error {
+  background-color: rgba(205, 117, 132, 0.5);
+  border: 2px solid red;
+  margin: $spacer * 2 0;
+}
+
+.error .error-msg {
+  color: red;
+  font-family: $sansFont;
+}

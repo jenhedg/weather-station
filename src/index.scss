@@ -2,12 +2,14 @@
 
 //Shared
 @import "src/shared/styles/variables.scss";
+@import "src/shared/styles/mixins.scss";
 @import "src/shared/fonts/fonts.scss";
 
 //Components
 @import "src/components/App/App.scss";
 @import "src/components/SearchParams/SearchParams.scss";
 @import "src/components/Results/Results.scss";
+@import "src/components/ErrorBoundary/ErrorBoundary.scss";
 
 //Global
 * {
