@@ -7,6 +7,7 @@
   margin: $spacer * 2 auto;
   padding: $spacer;
   overflow: hidden;
+  max-width: 600px;
 }
 
 .results .results-top {
@@ -14,16 +15,6 @@
   flex-wrap: wrap;
   margin-bottom: 4%;
 }
-
-// .results .results-top .results-locale {
-//   background: blue;
-//   flex: 1 0 50%;
-// }
-
-// .results .results-top .results-feature {
-//   background: red;
-//   flex: 1 0 75%;
-// }
 
 .results .results-top .results-locale,
 .results .results-top .results-feature {

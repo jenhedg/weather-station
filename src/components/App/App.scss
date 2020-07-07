@@ -3,9 +3,8 @@
   background-image: url(../../shared/images/background.jpg);
   background-size: cover;
   color: $white;
-  height: 100vh;
   overflow: hidden;
-  padding: $spacer;
+  padding: $spacer * 4 $spacer;
   width: 100%;
 }
 
@@ -24,4 +23,5 @@
 .content {
   margin: 0 auto;
   text-align: center;
+  min-height: 100vh;
 }
