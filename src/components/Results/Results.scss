@@ -19,7 +19,6 @@
 .results .results-top .results-locale,
 .results .results-top .results-feature {
   flex: 2 0 auto;
-  // padding: 3%;
 }
 
 .results .results-top .results-locale {
@@ -44,6 +43,9 @@
 }
 
 .results .results-bottom .results-icon {
+  background-color: $transWhite;
+  border: 1px solid $white;
+  border-radius: 6px;
   margin-right: auto;
 }
 
