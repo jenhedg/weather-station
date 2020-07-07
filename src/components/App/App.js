@@ -11,11 +11,11 @@ function App() {
       <main className="content">
         <SearchParams />
       </main>
-      <footer>
+      {/* <footer>
         <span>
           &#169;2020 Jennifer Hedgcock | Made with &#10084; and React.js
         </span>
-      </footer>
+      </footer> */}
     </div>
   );
 }

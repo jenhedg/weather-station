@@ -5,7 +5,17 @@
   color: $white;
   overflow: hidden;
   padding: $spacer;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+
+  @include sm {
+    position: relative;
+    height: 100vh;
+  }
   // height: 100vh;
 }
 
@@ -28,15 +38,15 @@
 .content {
   margin: 0 auto;
   text-align: center;
-  min-height: 550px;
+  // min-height: 550px;
 
-  @include sm {
-    height: 90vh;
-  }
+  // @include sm {
+  //   height: 90vh;
+  // }
 }
 
 footer {
-  min-height: 150px;
+  // min-height: 150px;
   font-family: $sansFont;
   font-weight: bold;
   display: flex;
