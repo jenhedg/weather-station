@@ -6,64 +6,56 @@
   font-family: $sansFont;
   margin: $spacer * 2 auto;
   padding: $spacer;
+  overflow: hidden;
 }
 
 .results .results-top {
   display: flex;
-  // flex-direction: row;
-  background: red;
+  flex-wrap: wrap;
+  margin-bottom: 4%;
+}
+
+// .results .results-top .results-locale {
+//   background: blue;
+//   flex: 1 0 50%;
+// }
+
+// .results .results-top .results-feature {
+//   background: red;
+//   flex: 1 0 75%;
+// }
+
+.results .results-top .results-locale,
+.results .results-top .results-feature {
+  flex: 2 0 auto;
+  // padding: 3%;
 }
 
 .results .results-top .results-locale {
-  background: blue;
-  display: flex;
-  flex-direction: column;
-  margin-right: auto;
-  width: 50%;
   text-align: left;
 }
 
-// .results .results-top .results-temp {
-// background: blue;
-// display: flex;
-// flex-direction: row;
-// margin-right: auto;
-// width: 50%;
-// text-align: left;
-// }
-
-// .results .results-wrap {
-//   // display: flex;
-//   // flex-direction: column;
-//   // flex-wrap: wrap;
-//   // align-content: flex-start;
-//   // align-items: flex-start;
-//   flex: 1 1 50%;
-// }
-
-// .results-wrap-top {
-//   border-bottom: 3px solid blue;
-// }
-
-// .results .pushright {
-//   margin-left: auto;
-// }
-
-// .results .results-wrap .results-city {
-//   font-size: 3em;
-// }
-
-// .results .results-datetime {
-//   font-weight: 100;
-//   text-align: left;
-// }
+.results .results-top .results-city {
+  font-size: 3.25em;
+}
 
 .results .results-top .results-temp {
   font-size: 6em;
   line-height: 1;
 }
 
-// .results-wrap-bottom {
-//   display: flex;
-//   flex-direction: column;
-// }
+.results .results-bottom {
+  text-align: left;
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.results .results-bottom .results-icon {
+  margin-right: auto;
+}
+
+.results .results-bottom .results-cond h3 {
+  font-weight: light;
+}
