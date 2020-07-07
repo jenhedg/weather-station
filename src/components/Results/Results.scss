@@ -27,11 +27,19 @@
 
 .results .results-top .results-city {
   font-size: 3.25em;
+
+  @include sm {
+    font-size: 5em;
+  }
 }
 
 .results .results-top .results-temp {
   font-size: 6em;
   line-height: 1;
+
+  @include sm {
+    font-size: 8em;
+  }
 }
 
 .results .results-bottom {
